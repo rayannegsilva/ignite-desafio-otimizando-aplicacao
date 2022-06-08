@@ -1,5 +1,5 @@
 import { Star, Clock } from 'react-feather';
-
+import { memo } from 'react'
 import '../styles/movie-card.scss';
 
 interface MovieCardProps {
@@ -9,7 +9,7 @@ interface MovieCardProps {
   runtime: string;
 }
 
-export function MovieCard(props: MovieCardProps) {
+function MovieCardComponent(props: MovieCardProps) {
   return (
     <div className="movie-card">
       <img
@@ -34,3 +34,5 @@ export function MovieCard(props: MovieCardProps) {
     </div>
   )
 }
+
+export const MovieCard = memo(MovieCardComponent)
